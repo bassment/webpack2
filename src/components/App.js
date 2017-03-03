@@ -1,3 +1,5 @@
+import './App.css';
+
 import React from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
@@ -38,6 +40,9 @@ const App = ({children}) => <Router>
             <Link to='/about'>About</Link>
             <Link to='/contact'>Contact</Link>
         </nav>
+
+        <h1>Page Content:</h1>
+
         <main>
             <Route exact path="/" component={Home}/>
             <Route path="/about" component={About}/>

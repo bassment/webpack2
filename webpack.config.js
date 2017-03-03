@@ -19,11 +19,14 @@ module.exports = env => {
         },
 
         module: {
-            loaders: [
+            rules: [
                 {
                     test: /\.(js)$/,
                     include: path.resolve(__dirname, 'src'),
-                    loader: 'babel-loader'
+                    use: 'babel-loader'
+                }, {
+                    test: /\.css$/,
+                    use: ['style-loader', 'css-loader']
                 }
             ]
         },
