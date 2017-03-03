@@ -2,9 +2,9 @@
 Webpack 2 boilerplate project
 
 
-Build the project with this command:
+Run the project with this command:
 ```
-yarn run build
+yarn start
 ```
 
 index.html generates in __dist__ folder.
