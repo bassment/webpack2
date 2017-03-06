@@ -73,22 +73,24 @@ export default class App extends Component {
 
         return (
             <Router>
-                <div style={styles.fill} className="container col-4 text-center">
-                    <nav>
-                        <NavLink activeClassName="active" exact to="/home">Home</NavLink>
-                        <NavLink activeClassName="active" exact to='/about'>About</NavLink>
-                        <NavLink activeClassName="active" exact to='/contact'>Contact</NavLink>
-                    </nav>
+                <div>
+                    <div style={styles.fill} className="container col-4 text-center">
+                        <nav>
+                            <NavLink activeClassName="active" exact to="/home">Home</NavLink>
+                            <NavLink activeClassName="active" exact to='/about'>About</NavLink>
+                            <NavLink activeClassName="active" exact to='/contact'>Contact</NavLink>
+                        </nav>
 
-                    <main>
-                        <FadeRoute path="/home" component={Home}/>
-                        <FadeRoute path="/about" component={About}/>
-                        <FadeRoute path="/contact" component={Contact}/>
-                        
-                        <Route exact path="/" render={() => (
-                            <Redirect to="/home"/>
-                        )}/>
-                    </main>
+                        <main>
+                            <FadeRoute path="/home" component={Home}/>
+                            <FadeRoute path="/about" component={About}/>
+                            <FadeRoute path="/contact" component={Contact}/>
+
+                            <Route exact path="/" render={() => (
+                                <Redirect to="/home"/>
+                            )}/>
+                        </main>
+                    </div>
                 </div>
             </Router>
         );
