@@ -1,3 +1,38 @@
-h1 {
-    color: red;
+a, a:visited, a:hover, a:active {
+  color: inherit;
+}
+
+.container {
+    margin: 200px auto 0;
+}
+
+.col-4 {
+    width: 25%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+nav a {
+    padding: 10px;
+    font-size: 1.2em;
+    text-decoration: none;
+    border: 1px solid gray;
+    margin-left: 2px;
+    background-color: #808080;
+    transition: background-color 1s ease;
+}
+
+nav a:focus {
+    color: #000;
+    outline: none;
+}
+
+nav a:active {
+    color: #000;
+}
+
+a.active {
+    background: #fff;
 }
