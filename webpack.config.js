@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
 // const WebpackChunkHash = require("webpack-chunk-hash");
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = env => {
     return {
@@ -26,7 +27,9 @@ module.exports = env => {
                     use: 'babel-loader'
                 }, {
                     test: /\.css$/,
-                    use: ['style-loader', 'css-loader']
+                    use: ExtractTextPlugin.extract({
+                        use: 'css-loader'
+                    })
                 }
             ]
         },
@@ -48,7 +51,8 @@ module.exports = env => {
             // new webpack.HashedModuleIdsPlugin(),
             // new WebpackChunkHash(),
             // new ChunkManifestPlugin({filename: 'chunk-manifest.json', manifestVariable: 'webpackManifest'}),
-            new ScriptExtHtmlWebpackPlugin({inline: 'manifest'})
+            new ScriptExtHtmlWebpackPlugin({inline: 'manifest'}),
+            new ExtractTextPlugin('styles.css'),
         ]
     }
 }
